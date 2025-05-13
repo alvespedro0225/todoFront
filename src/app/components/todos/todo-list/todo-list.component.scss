@@ -1,0 +1,95 @@
+@use "../../../app.component";
+
+:host {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  min-height: 70vh;
+  overflow-y: scroll;
+  list-style: none;
+  max-height: 78vh;
+  padding: 0 1rem 0 0;
+  margin: 3rem 0 0 1rem;
+}
+
+.todo-header {
+  display: flex;
+  gap: 0 3rem;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-bottom: 2px solid light-dark(black, white);
+}
+
+.todo-header-name {
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  gap: 0 3rem;
+  margin-right: 14rem;
+}
+
+.todo-header-created{
+  margin-right: 1.4rem;
+}
+
+.todo-header-status {
+  margin-right: 4px;
+}
+
+.empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (width < #{app.$width-800-plus-padding}) {
+
+  .todo-list {
+    margin-top: 2rem;
+  }
+
+  .todo-header {
+    gap: 0 2rem;
+  }
+
+  .todo-header-status {
+    margin-right: 6px;
+  }
+}
+
+@media (width < 600px) {
+  .todo-header-updated {
+    display: none;
+  }
+
+  .todo-header-status {
+    margin-right: 5px;
+  }
+
+  .todo-header-created {
+    margin-right: 12px;
+  }
+
+  .header-left {
+    margin-right: 13rem;
+  }
+}
+
+@media (width< 450px) {
+  .todo-header-created {
+    display: none;
+  }
+
+  .todo-header-status {
+    margin-right: 2px;
+  }
+}

@@ -1,0 +1,58 @@
+@use "../../app.component";
+
+:host {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  margin: 0 auto;
+  background-color: light-dark(#30e99e, #0e7061);
+}
+
+
+.todo-search {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-child:last-child {
+  gap: 2.5rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.no-button {
+  box-shadow: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+ }
+
+.no-button,
+.img-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+@media (width > app.$width-800-plus-padding) {
+  .navbar {
+    font-size: 2rem;
+    height: 5.6rem;
+  }
+}
+
+@media (width <= app.$width-800-plus-padding) {
+  .navbar {
+    font-size: 1.8rem;
+    height: 4.6rem;
+  }
+}

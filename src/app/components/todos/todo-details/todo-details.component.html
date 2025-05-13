@@ -1,0 +1,10 @@
+@defer (when (todo != undefined)) {
+  <h1>{{ todo!.name }}</h1>
+  <div>
+    <h2>Status:</h2>
+    <p>{{ Status[todo!.status] }}</p>
+  </div>
+  <p>{{ todo!.description }}</p>
+  <p>{{ todo!.createdAt }}</p>
+  <p>{{ todo!.updatedAt }}</p>
+}

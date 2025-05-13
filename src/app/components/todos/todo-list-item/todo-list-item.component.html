@@ -1,0 +1,31 @@
+<li class="todo-item">
+  <a
+    routerLink="./{{ todo().id }}"
+    (click)="clickTodo(todo())"
+    class="todo-item-name"
+    >{{ todo().name }}</a
+  >
+  <span class="todo-item-status">
+    @if (todo().status == Status.Todo) {
+      <img ngSrc="svg/todo.svg" width="30" height="30" alt="Todo status" />
+    } @else if (todo().status == Status.InProgress) {
+      <img
+        ngSrc="svg/in-progress.svg"
+        width="30"
+        height="30"
+        alt="Todo status"
+      />
+    } @else {
+      <img ngSrc="svg/complete.svg" width="30" height="30" alt="Todo status" />
+    }
+  </span>
+  <span class="todo-item-created">{{ formatDate(todo().createdAt!) }}</span>
+  <span class="todo-item-updated">{{ formatDate(todo().updatedAt!) }}</span>
+  <a routerLink="#" type="button" class="no-button">
+    <img ngSrc="svg/edit.svg" width="30" height="30" alt="Edit todo" />
+  </a>
+  <button type="button" class="no-button" (click)="onDeleteClicked(todo().id!)">
+    <!--          Delete-->
+    <img ngSrc="svg/trash.svg" width="30" height="30" alt="Delete todo" />
+  </button>
+</li>

@@ -1,0 +1,19 @@
+$padding-x : 1.2rem;
+$width-800-plus-padding: calc(800px + $padding-x);
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+@media (width >= $width-800-plus-padding) {
+  .container {
+    padding: 3rem 0;
+  }
+}
+
+@media (width < $width-800-plus-padding) {
+  .container {
+    padding: 2rem $padding-x;
+  }
+}

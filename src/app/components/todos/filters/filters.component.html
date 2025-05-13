@@ -1,0 +1,20 @@
+<form style="width: 70%">
+  <input
+    class="text-filter"
+    type="search"
+    placeholder="Look for a task"
+    [(ngModel)]="filterText"
+    (ngModelChange)="updateFilter()"
+    [ngModelOptions]="{ standalone: true }"
+  />
+</form>
+<select
+  class="select-filter"
+  [(ngModel)]="filterStatus"
+  (ngModelChange)="updateFilter()"
+>
+  <option value="3" selected>All</option>
+  <option value="0">Todo</option>
+  <option value="1">In Progress</option>
+  <option value="2">Complete</option>
+</select>

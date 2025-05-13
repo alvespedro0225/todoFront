@@ -1,0 +1,27 @@
+<ul class="todo-list">
+  <li class="todo-header">
+    <span class="todo-header-name">Name</span>
+    <div class="header-left">
+      <span class="todo-header-status">Status</span>
+      <span class="todo-header-created">Created</span>
+      <span class="todo-header-updated">Updated</span>
+    </div>
+    <!--    <span class="todo-header-edit">Edit</span>-->
+    <!--    <span class="todo-header-delete">Delete</span>-->
+  </li>
+  @defer (when (visibleTodos != undefined)) {
+    <!--  @defer (on timer(5000s)) {-->
+    @for (todo of visibleTodos; track todo.id) {
+      <todo-list-item
+        [todo]="todo"
+        (deleteTodo)="deleteTodo($event)"
+      ></todo-list-item>
+    } @empty {
+      <li class="empty-message">There are no items</li>
+    }
+  } @loading (after 200ms) {
+    <todo-loading-screen></todo-loading-screen>
+  } @placeholder {
+    <todo-loading-screen></todo-loading-screen>
+  }
+</ul>

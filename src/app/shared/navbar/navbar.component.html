@@ -1,0 +1,40 @@
+<nav class="navbar" id="navbar">
+  <a routerLink="" class="logo nav-child"> logo </a>
+  <div class="config nav-child">
+    <button
+      class="nav-button no-button"
+      type="button"
+      (click)="toggleLightMode()"
+    >
+      @if (colorThemeIcon) {
+        <img
+          ngSrc="svg/moon.svg"
+          [width]="iconWidth"
+          [height]="iconHeight"
+          [alt]="iconAltText"
+          class="light-mode-icon"
+          priority
+        />
+      } @else {
+        <img
+          ngSrc="svg/sun.svg"
+          [width]="iconWidth"
+          [height]="iconHeight"
+          [alt]="iconAltText"
+          class="dark-mode-icon"
+          priority
+        />
+      }
+    </button>
+    <a class="img-wrapper">
+      <img
+        class="settings-icon"
+        ngSrc="svg/config.svg"
+        [width]="iconWidth"
+        [height]="iconHeight"
+        alt="settings"
+        priority
+      />
+    </a>
+  </div>
+</nav>
