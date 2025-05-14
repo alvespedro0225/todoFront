@@ -60,5 +60,4 @@ export class TodoListComponent implements OnInit {
     if (this.sortStates[0]) this.todos?.reverse();
     this.sortStates[0] = !this.sortStates[0];
   }
-
 }

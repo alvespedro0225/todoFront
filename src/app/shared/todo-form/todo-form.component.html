@@ -1,0 +1,40 @@
+<form class="todo-form" [formGroup]="todoForm()">
+  <section class="form-todo-info" style="width: 100%">
+    <legend class="form-title">Todo Info</legend>
+    <div class="text-wrapper">
+      <input
+        class="form-item"
+        type="text"
+        placeholder="Todo name"
+        id="todo-form-name"
+        formControlName="name"
+      />
+      @if (!todoForm().get("name")?.valid) {
+        <span class="invalid-alert-text-wrapper">
+          <span class="invalid-alert-text">
+            Must have from 3 to 40 characters
+          </span>
+        </span>
+      }
+    </div>
+    <textarea
+      class="form-item"
+      placeholder="Todo description"
+      type="text"
+      id="todo-form-description"
+      formControlName="description"
+    ></textarea>
+    <span class="form-item form-status-wrapper">
+      <label class="form-label" for="todo-form-status">Status:</label>
+      <select class="" id="todo-form-status" formControlName="status">
+        <option value="0">Todo</option>
+        <option value="1">In Progress</option>
+        <option value="2">Complete</option>
+      </select>
+    </span>
+  </section>
+  <section class="form-buttons">
+    <a [routerLink]="cancelLink()" class="a-button">Cancel</a>
+    <button type="button" (click)="onSubmit.emit()">Add todo</button>
+  </section>
+</form>

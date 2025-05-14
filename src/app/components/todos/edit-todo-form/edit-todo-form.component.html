@@ -1,0 +1,5 @@
+@defer (when todo != undefined) {
+  <todo-form (onSubmit)="submit()" [todoForm]="todoForm"></todo-form>
+} @placeholder {
+  <todo-loading-screen></todo-loading-screen>
+}

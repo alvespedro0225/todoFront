@@ -1,4 +1,4 @@
-import { Component, inject, input, output } from '@angular/core';
+import { Component, inject, input, OnInit, output } from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import { Status, Todo } from '../../../shared/models';
@@ -12,13 +12,13 @@ import { SignalsService } from '../../../services/signals.service';
 })
 export class TodoListItemComponent {
   protected readonly Status = Status;
+  private signals = inject(SignalsService);
   todo = input.required<Todo>();
   deleteTodo = output<number>();
-  private signals = inject(SignalsService);
 
   formatDate(date: string) {
-    let a = new Date(date);
-    return a.toLocaleDateString(undefined, {
+    let dateFormater = new Date(date);
+    return dateFormater.toLocaleDateString(undefined, {
       day: "numeric",
       month: "2-digit",
       year: "2-digit"
@@ -31,5 +31,4 @@ export class TodoListItemComponent {
   clickTodo(todo: Todo) {
     this.signals.clickedTodo.set(todo);
   }
-
 }

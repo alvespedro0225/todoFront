@@ -1,3 +1,5 @@
+import { FormControl } from '@angular/forms';
+
 export interface Todo {
   name: string,
   status: Status,
@@ -13,6 +15,11 @@ export interface TodoCreate {
   description: string
 }
 
+export interface TodoCreateForm {
+  name: FormControl<string>,
+  status: FormControl<string | number>,
+  description: FormControl<string>
+}
 export enum Status {
   Todo,
   InProgress,
@@ -24,3 +31,4 @@ export interface cacheData {
   expiration: number,
   creation: number
 }
+

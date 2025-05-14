@@ -1,0 +1,71 @@
+$max-width: 45rem;
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  max-width: $max-width;
+  //min-width: 400px;
+  width: 100%;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form-todo-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: inherit;
+}
+
+.form-title {
+  font-size: 3rem;
+}
+
+.todo-form input,
+.todo-form textarea {
+  width: 100%;
+  font-weight: inherit;
+  font-family: inherit;
+  max-width: 85vw;
+}
+
+.todo-form textarea {
+  border-radius: 0.8rem;
+  height: 25rem;
+  resize: none;
+}
+
+.form-status-wrapper,
+.form-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form-buttons {
+  max-width: 450px;
+}
+
+.invalid-alert-text {
+  color: red;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.invalid-alert-text-wrapper {
+  display: flex;
+  width: 100%;
+  font-size: 1.3rem;
+  margin-top: 0.3rem;
+}
